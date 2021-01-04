@@ -14,12 +14,31 @@ string static Encrypter::reverse(string s){
 	return r;
 }
 
-vector<char> static Encrypter::changeBase(string s){
+char statoc Encrypter::get_base(vector<char> v1){
+	char base = 0;
+	//
+	if(base == 2 || base == 10 || base == 16 || base == 's'){ //s is a normal stirng like caesar or a default string
+		return base;
+	}
+}
+
+vector<char> static Encrypter::changeBase(string s, char thisBase, char newBase){
 	vector<char> ans;
+	
 }
 
 vector<char> static Encrypter::changeBaseTo10(vector<char> v1){
 	vector<char> ans;
+	char base = get_base(v1);
+	if(base == 2){
+
+	} else if(base == 10){
+
+	} else if(base == 16){
+		
+	} else if(base == 's'){
+			
+	}
 }
 
 vector<char> static Encrypter::changeBaseTo2(vector<char> v1){
@@ -30,6 +49,39 @@ vector<char> static Encrypter::changeBaseTo2(vector<char> v1){
 	}
 	return ans;
 }
+
+//
+
+long long static Encrypter::convertDecimalToBinary(int n)
+{
+    long long binaryNumber = 0;
+    int remainder, i = 1, step = 1;
+
+    while (n!=0)
+    {
+        remainder = n%2;
+        cout << "Step " << step++ << ": " << n << "/2, Remainder = " << remainder << ", Quotient = " << n/2 << endl;
+        n /= 2;
+        binaryNumber += remainder*i;
+        i *= 10;
+    }
+    return binaryNumber;
+}
+
+int static Encrypter::convertBinaryToDecimal(long long n)
+{
+    int decimalNumber = 0, i = 0, remainder;
+    while (n!=0)
+    {
+        remainder = n%10;
+        n /= 10;
+        decimalNumber += remainder*pow(2,i);
+        ++i;
+    }
+    return decimalNumber;
+}
+
+//
 
 // void decToBinary(int n) 
 // { 
