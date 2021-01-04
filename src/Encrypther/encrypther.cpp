@@ -1,4 +1,6 @@
 #include <iostream>
+#include <sstream>
+#include <iomanip>
 #include <vector>
 #include <bitset>
 
@@ -44,6 +46,14 @@ vector<char> static Encrypter::changeBaseTo2(vector<char> v1){
 
 vector<char> static Encrypter::changeBaseTo16(vector<char> v1){
 	vector<char> ans;
+    stringstream ss;
+    for(int i = 0; i < v1.size(); i++){
+        ss << hex << (int)v1.at(i);
+        for(int j = 0; j < ss.str().length(); j++){
+            ans.push_back(ss.str.at(j));
+        }
+    }
+    return ans;
 }
 
 vector<char> static Encrypter::changeBaseToCaesar(vector<char> v1){
