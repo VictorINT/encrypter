@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <bitset>
 
 using namespace std;
 
@@ -21,7 +22,25 @@ vector<char> static Encrypter::changeBaseTo10(vector<char> v1){
 
 vector<char> static Encrypter::changeBaseTo2(vector<char> v1){
 	vector<char> ans;
+	string binary = "";
+	for(int i = 0; i < v1.size(); i++){
+		binary.push_back(bitset<8>(v1.at(i)).to_string()); //to binary
+	}
+	return ans;
 }
+
+// void decToBinary(int n) 
+// { 
+//     int binaryNum[32]; 
+//     int i = 0; 
+//     while (n > 0) { 
+//         binaryNum[i] = n % 2; 
+//         n = n / 2; 
+//         i++; 
+//     } 
+//     for (int j = i - 1; j >= 0; j--) 
+//         cout << binaryNum[j]; 
+// } 
 
 vector<char> static Encrypter::changeBaseTo16(vector<char> v1){
 	vector<char> ans;
