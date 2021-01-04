@@ -1,21 +1,20 @@
-#include <iostream>
-#include <sstream>
-#include <iomanip>
-#include <vector>
-#include <bitset>
+#include "encrypther.h"
 
-using namespace std;
 //reverse
-string static Encrypter::reverse(string s){
-	string r = "";
-	for(int i = s.size(); i != 0; i--){
-		r.push_back(s.at(i));
-	}
-	return r;
+Encrypter::Encrypter(string encrypthionKey = "Motherfucker"){
+    key = encrypthionKey;
 }
 
-//change base
-vector<char> static Encrypter::changeBase(string s, char thisBase, char newBase){
+string Encrypter::reverseString(string& str){
+	int n = str.length(); 
+  
+    // Swap character starting from two 
+    // corners 
+    for (int i = 0; i < n / 2; i++) 
+        swap(str[i], str[n - i - 1]); 
+}
+
+vector<char> Encrypter::changeBase(string s, char thisBase, char newBase){
 	vector<char> ans;
 	
 }
@@ -23,7 +22,7 @@ vector<char> static Encrypter::changeBase(string s, char thisBase, char newBase)
 ///////bases
 
 //10
-vector<char> static Encrypter::changeBaseTo10(vector<char> v1, char base){
+vector<char> Encrypter::changeBaseTo10(vector<char> v1, char base){
 	vector<char> ans;
 	if(base == 2){
 		
@@ -39,7 +38,7 @@ vector<char> static Encrypter::changeBaseTo10(vector<char> v1, char base){
 }
 
 //2
-vector<char> static Encrypter::changeBaseTo2(vector<char> v1){
+vector<char> Encrypter::changeBaseTo2(vector<char> v1){
 	vector<char> ans;
 	string binary = "";
 	for(int i = 0; i < v1.size(); i++){
@@ -49,7 +48,7 @@ vector<char> static Encrypter::changeBaseTo2(vector<char> v1){
 }
 
 //16
-vector<char> static Encrypter::changeBaseTo16(vector<char> v1){
+vector<char> Encrypter::changeBaseTo16(vector<char> v1){
 	vector<char> ans;
     stringstream ss;
     for(int i = 0; i < v1.size(); i++){
@@ -62,7 +61,7 @@ vector<char> static Encrypter::changeBaseTo16(vector<char> v1){
 }
 
 //caesar
-vector<char> static Encrypter::changeBaseToCaesar(vector<char> v1){
+vector<char> Encrypter::changeBaseToCaesar(vector<char> v1){
 	vector<char> ans;
 }
 
