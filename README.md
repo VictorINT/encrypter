@@ -1,2 +1,3 @@
 # encrypter
-an encrypter
+
+This is an encryption algorithm.
