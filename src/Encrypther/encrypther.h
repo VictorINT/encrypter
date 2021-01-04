@@ -3,7 +3,7 @@
 
 #include "encrypter.cpp"
 
-class encrypter{
+class Encrypter{
 
 }
 
