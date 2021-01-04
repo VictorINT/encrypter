@@ -5,7 +5,7 @@
 #include <bitset>
 
 using namespace std;
-
+//reverse
 string static Encrypter::reverse(string s){
 	string r = "";
 	for(int i = s.size(); i != 0; i--){
@@ -14,33 +14,31 @@ string static Encrypter::reverse(string s){
 	return r;
 }
 
-char statoc Encrypter::get_base(vector<char> v1){
-	char base = 0;
-	//
-	if(base == 2 || base == 10 || base == 16 || base == 's'){ //s is a normal stirng like caesar or a default string
-		return base;
-	}
-}
-
+//change base
 vector<char> static Encrypter::changeBase(string s, char thisBase, char newBase){
 	vector<char> ans;
 	
 }
 
-vector<char> static Encrypter::changeBaseTo10(vector<char> v1){
-	vector<char> ans;
-	char base = get_base(v1);
-	if(base == 2){
+///////bases
 
+//10
+vector<char> static Encrypter::changeBaseTo10(vector<char> v1, char base){
+	vector<char> ans;
+	if(base == 2){
+		
 	} else if(base == 10){
 
 	} else if(base == 16){
 		
 	} else if(base == 's'){
 			
+	} else {
+		return -1;
 	}
 }
 
+//2
 vector<char> static Encrypter::changeBaseTo2(vector<char> v1){
 	vector<char> ans;
 	string binary = "";
@@ -50,8 +48,27 @@ vector<char> static Encrypter::changeBaseTo2(vector<char> v1){
 	return ans;
 }
 
-//
+//16
+vector<char> static Encrypter::changeBaseTo16(vector<char> v1){
+	vector<char> ans;
+    stringstream ss;
+    for(int i = 0; i < v1.size(); i++){
+        ss << hex << (int)v1.at(i);
+        for(int j = 0; j < ss.str().length(); j++){
+            ans.push_back(ss.str.at(j));
+        }
+    }
+    return ans;
+}
 
+//caesar
+vector<char> static Encrypter::changeBaseToCaesar(vector<char> v1){
+	vector<char> ans;
+}
+
+/*
+
+//jeg start
 long long static Encrypter::convertDecimalToBinary(int n)
 {
     long long binaryNumber = 0;
@@ -80,42 +97,5 @@ int static Encrypter::convertBinaryToDecimal(long long n)
     }
     return decimalNumber;
 }
-
-//
-
-// void decToBinary(int n) 
-// { 
-//     int binaryNum[32]; 
-//     int i = 0; 
-//     while (n > 0) { 
-//         binaryNum[i] = n % 2; 
-//         n = n / 2; 
-//         i++; 
-//     } 
-//     for (int j = i - 1; j >= 0; j--) 
-//         cout << binaryNum[j]; 
-// } 
-
-vector<char> static Encrypter::changeBaseTo16(vector<char> v1){
-	vector<char> ans;
-    stringstream ss;
-    for(int i = 0; i < v1.size(); i++){
-        ss << hex << (int)v1.at(i);
-        for(int j = 0; j < ss.str().length(); j++){
-            ans.push_back(ss.str.at(j));
-        }
-    }
-    return ans;
-}
-
-vector<char> static Encrypter::changeBaseToCaesar(vector<char> v1){
-	vector<char> ans;
-}
-/*
-char static encrypter::get_base(string s){
-	char biggest number = 0;
-	for(int i = 0; i < s.size(); i++){
-		if()
-	}
-}
+//jeg end
 */
