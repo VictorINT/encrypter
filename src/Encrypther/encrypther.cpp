@@ -22,19 +22,78 @@ vector<char> Encrypter::changeBase(string s, char thisBase, char newBase){
 ///////bases
 
 //10
-vector<char> Encrypter::changeBaseTo10(vector<char> v1, char base){
-	vector<char> ans;
-	if(base == 2){
-		
-	} else if(base == 10){
+int Encrypter::hexadecimalToDecimal(char hexVal[]) 
+{    
+    int len = strlen(hexVal); 
+      
+    // Initializing base value to 1, i.e 16^0 
+    int base = 1; 
+      
+    int dec_val = 0; 
+      
+    // Extracting characters as digits from last character 
+    for (int i=len-1; i>=0; i--) 
+    {    
+        // if character lies in '0'-'9', converting  
+        // it to integral 0-9 by subtracting 48 from 
+        // ASCII value. 
+        if (hexVal[i]>='0' && hexVal[i]<='9') 
+        { 
+            dec_val += (hexVal[i] - 48)*base; 
+                  
+            // incrementing base by power 
+            base = base * 16; 
+        } 
+  
+        // if character lies in 'A'-'F' , converting  
+        // it to integral 10 - 15 by subtracting 55  
+        // from ASCII value 
+        else if (hexVal[i]>='A' && hexVal[i]<='F') 
+        { 
+            dec_val += (hexVal[i] - 55)*base; 
+          
+            // incrementing base by power 
+            base = base*16; 
+        } 
+    } 
+      
+    return dec_val; 
+} 
+int static Encrypter::convertBinaryToDecimal(long long n)
+{
+    int decimalNumber = 0, i = 0, remainder;
+    while (n!=0)
+    {
+        remainder = n%10;
+        n /= 10;
+        decimalNumber += remainder*pow(2,i);
+        ++i;
+    }
+    return decimalNumber;
+}
 
+string static Encrypter::changeBaseTo10(vector<char> v1, char base){
+	string ans = "";
+	stringstream ss;
+	string str = "";
+	unsigned long long idk;
+	for(int i = 0; i < v1.size(); i++){
+		str.push_back(v1.at(i));
+	}
+	ss<<str;
+	ss>>idk;
+	if(base == 2){
+		ans.push_back(convertBinaryToDecimal(idk));
+	} else if(base == 10){
+		ans = str;
 	} else if(base == 16){
 		
 	} else if(base == 's'){
-			
+		
 	} else {
-		return -1;
+		return "";
 	}
+	return str;
 }
 
 //2
