@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <vector>
 #include <bitset>
+#include <string.h>
 
 using namespace std;
 
@@ -15,11 +16,6 @@ class Encrypter{
     private:
         string key;
         static string reverseString(string& str);
-        static vector<char> changeBase(string s);
-        static vector<char> changeBaseTo2(vector<char> v1);
-        static vector<char> changeBaseTo10(vector<char> v1);
-        static vector<char> changeBaseTo16(vector<char> v1);
-        static vector<char> changeBaseToCaesar(vector<char> v1);
 };
 
 #endif
