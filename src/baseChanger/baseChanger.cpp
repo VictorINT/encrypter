@@ -1,10 +1,4 @@
-#include <vector>
-#include <string>
-#include <stdio.h>
-#include <sstream>
-#include <string>
-#include <bitset>
-using namespace std;
+#include "baseChanger.h"
 
 string toDeca(string something){
     string deca = "";
