@@ -8,28 +8,23 @@ using namespace std;
 
 string toDeca(string something){
     string deca = "";
-    int decaInt = stoi(something);
-    deca = to_string(decaInt);
+    stringstream ss;
+    ss << dec << something;
+    ss >> deca;
     return deca;
 }
 
 string toHexa(string something){
     string hexa = "";
-    int decaInt = stoi(something);
     stringstream ss;
-    ss << hex << decaInt;
+    ss << hex << something;
     ss >> hexa;
     return hexa;
 }
 
 string toBinary(string something){
     string binary = "";
-    int decaInt = stoi(something);
-    stringstream ss;
-    ss << decaInt;
-    string s;
-    ss >> s;
-    int BinInt = bitset<32>(s, 2).to_ulong();
+    int BinInt = bitset<32>(something, 2).to_ulong();
     return binary;
 }
 
