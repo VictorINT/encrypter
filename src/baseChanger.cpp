@@ -2,8 +2,8 @@
 #include <string>
 #include <stdio.h>
 #include <sstream>
+#include <string>
 #include <bitset>
-
 using namespace std;
 
 string toDeca(string something){
@@ -22,9 +22,15 @@ string toHexa(string something){
     return hexa;
 }
 
-string toBinary(string something){
+string toBinary(string s){
     string binary = "";
-    int BinInt = bitset<32>(something, 2).to_ulong();
+    stringstream ss;
+    for (size_t i = 0; i < s.size(); ++i){
+       ss << bitset<8>(s.c_str()[i]);
+       string news = "";
+       ss >> news;
+       binary = binary.append(news);
+    }
     return binary;
 }
 
