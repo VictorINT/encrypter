@@ -1,10 +1,8 @@
 #include "text_transform.h"
-#include <string>
-#include <algorithm>
 
 void textTransformer::reverse(std::string &str){
 	for(size_t i = 0; i < str.length()/2; i++){
-		std::swap(str.at(i), str.at(n-i-1));
+		std::swap(str.at(i), str.at(str.length()-i-1));
 	}
 }
 
