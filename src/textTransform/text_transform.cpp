@@ -22,3 +22,11 @@ void textTransformer::merge(std::string &str1, std::string str2){
 	}
 	str1 = result;
 }
+
+void textTransformer::unmerge(std::string &s) {
+    std::string result;
+    for (int i = 0; i < s.length(); i+=2) {
+        result += s[i];
+    }
+    s = result;
+}

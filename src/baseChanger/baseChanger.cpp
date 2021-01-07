@@ -43,9 +43,9 @@ string toCaesar(const string& s, short key){
         if (i == *" ")
             result += " ";
         else if (isupper(i))
-            result += char(int(i+key-65)%26 +65);
+            result += char(int(i+key-65)%26 + 65);
         else if (islower(i))
-            result += char(int(i+key-97)%26 +97);
+            result += char(int(i+key-97)%26 + 97);
         else
             result += i;
     } 
@@ -65,6 +65,38 @@ string fromHex(string s){
     return output;
 }
 
+string fromBinary(const string& s){
+    string text;
+    stringstream stream(s);
+    while (stream.good()) {
+        bitset<8> bits;
+        stream >> bits;
+        text += char(bits.to_ulong());
+    }
+    return text.substr(0, text.size()-1);
+}
+
+string fromDeca(string s){
+    string output;
+    for (int i = 0; i < s.length();){
+        if (s[i] == *"1"){
+            string m(s.substr(i, 3));
+            stringstream number(m);
+            int n = 0;
+            number >> n;
+            output += (char)n;
+            i += 3;
+        } else {
+            string m(s.substr(i, 2));
+            stringstream number(m);
+            int n = 0;
+            number >> n;
+            output += (char)n;
+            i += 2;
+        }
+    }
+    return output;
+}
 
 /************ Dependent functions *************/
 

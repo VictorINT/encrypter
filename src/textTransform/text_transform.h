@@ -8,6 +8,7 @@ public:
 	static void reverse(std::string &str);
 	static int asciiAccumulate(std::string key);
 	static void merge(std::string &str1, std::string str2);
+	static void unmerge(std::string &s);
 };
 
 #endif

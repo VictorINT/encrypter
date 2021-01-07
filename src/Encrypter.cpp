@@ -14,7 +14,7 @@ string Encrypter::encrypt(string s){ //returns the encrypted text
     encryptedText = toCaesar(encryptedText, textTransformer::asciiAccumulate(key));
     textTransformer::reverse(encryptedText);
     if ((int)key[0]%2 == 0){
-       encryptedText = toHex(encryptedText);
+        encryptedText = toHex(encryptedText);
         if ((int)key[1]%2 == 0){
             encryptedText = toDeca(encryptedText);
             textTransformer::reverse(encryptedText);
@@ -40,7 +40,33 @@ string Encrypter::encrypt(string s){ //returns the encrypted text
 }
 
 string Encrypter::decrypt(string s){ //returns the decrypted text //TODO: still in progress
-    string decryptedText;
+    string decryptedText = s;
+    if ((int)key[0]%2 == 0){
+        if ((int)key[1]%2 == 0){
+            decryptedText = fromBinary(decryptedText);
+            textTransformer::reverse(decryptedText);
+            decryptedText = fromDeca(decryptedText);
+        } else {
+            decryptedText = fromDeca(decryptedText);
+            textTransformer::reverse(decryptedText);
+            decryptedText = fromBinary(decryptedText);
+        }
+        decryptedText = fromHex(decryptedText);
+    } else {
+        if ((int)key[1]%2 == 0){
+            decryptedText = fromHex(decryptedText);
+            textTransformer::reverse(decryptedText);
+            decryptedText = fromDeca(decryptedText);
+        } else {
+            decryptedText = fromDeca(decryptedText);
+            textTransformer::reverse(decryptedText);
+            decryptedText = fromHex(decryptedText);
+        }
+        decryptedText = fromBinary(decryptedText);
+    }
+    textTransformer::reverse(decryptedText);
+    decryptedText = toCaesar(decryptedText, 26-(textTransformer::asciiAccumulate(key)%26));
+    textTransformer::unmerge(decryptedText);
     return decryptedText;
 }
 

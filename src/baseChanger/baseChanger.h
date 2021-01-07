@@ -19,5 +19,7 @@ string toCaesar(const string& s, short key);
 
 //converters from
 string fromHex(string s);
+string fromBinary(const string& s);
+string fromDeca(string s);
 
 #endif
