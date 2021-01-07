@@ -7,12 +7,17 @@
 #include <sstream>
 #include <string>
 #include <bitset>
+#include <stdexcept>
 
 using namespace std;
 
-string toDeca(string something);
-string toHexa(string something);
-string toBinary(string something);
-string toCaesar(string s, short key);
+//converters to
+string toDeca(const string& s);
+string toHex(const string& s);
+string toBinary(const string& s);
+string toCaesar(const string& s, short key);
+
+//converters from
+string fromHex(string s);
 
 #endif

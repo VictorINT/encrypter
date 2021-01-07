@@ -14,7 +14,7 @@ string Encrypter::encrypt(string s){ //returns the encrypted text
     encryptedText = toCaesar(encryptedText, textTransformer::asciiAccumulate(key));
     textTransformer::reverse(encryptedText);
     if ((int)key[0]%2 == 0){
-       encryptedText = toHexa(encryptedText);
+       encryptedText = toHex(encryptedText);
         if ((int)key[1]%2 == 0){
             encryptedText = toDeca(encryptedText);
             textTransformer::reverse(encryptedText);
@@ -29,9 +29,9 @@ string Encrypter::encrypt(string s){ //returns the encrypted text
         if ((int)key[1]%2 == 0){
             encryptedText = toDeca(encryptedText);
             textTransformer::reverse(encryptedText);
-            encryptedText = toHexa(encryptedText);
+            encryptedText = toHex(encryptedText);
         } else {
-            encryptedText = toHexa(encryptedText);
+            encryptedText = toHex(encryptedText);
             textTransformer::reverse(encryptedText);
             encryptedText = toDeca(encryptedText);
         }
