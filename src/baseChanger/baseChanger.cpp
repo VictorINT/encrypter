@@ -1,5 +1,7 @@
 #include "baseChanger.h"
 
+using namespace std;
+
 //Declarations for dependent function
 int hex_value(unsigned char hex_digit);
 //////////////////////////////////////

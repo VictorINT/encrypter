@@ -1,5 +1,7 @@
 #include "Encrypter.h"
 
+using namespace std;
+
 //constructor
 Encrypter::Encrypter(string encryptionKey){
     key = encryptionKey;
@@ -77,10 +79,10 @@ void Encrypter::generateKeyFile(const string& filename){
     file << generateRandomKey(256);
 }
 
-string Encrypter::generateRandomKey(int keyLenght){
+string Encrypter::generateRandomKey(int keyLength){
     int random;
     string rndKey;
-    for (int i = 0; i < keyLenght; i++){
+    for (int i = 0; i < keyLength; i++){
         random = rand() % 95 + 32;
         rndKey.push_back((char)random);
     }
