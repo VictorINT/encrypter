@@ -2,38 +2,35 @@
 #define ENCRYPTER_H
 
 #include <string>
-#include <stdlib.h>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
 #include <fstream>
 #include <filesystem>
 #include "baseChanger/baseChanger.h"
 #include "textTransform/text_transform.h"
 
-using namespace std;
-
-class Encrypter
-{
+class Encrypter {
     public:
-        Encrypter(string encryptionKey = "default");
+        Encrypter(std::string encryptionKey = "default");
 
-        string encrypt(string s); //returns the encrypted text
-        string decrypt(string s); //returns the decrypted text
+        std::string encrypt(std::string s); //returns the encrypted text
+        std::string decrypt(std::string s); //returns the decrypted text
 
         //setters and getters
-        string getkey() { return key; }
-        void setkey(string val) { key = val; }
+        std::string getkey() { return key; }
+        void setkey(std::string val) { key = val; }
 
-        //Usefull functions
+        //Useful functions
         //static function
-        static void generateKeyFile(const string& filename = "key.txt");
+        static void generateKeyFile(const std::string& filename = "key.txt");
         
         //nonstatic functions
-        void loadKeyFromFile(const string& filename = "key.txt");
+        void loadKeyFromFile(const std::string& filename = "key.txt");
     protected:
-        string key;
+        std::string key;
 
     private:
-        static string generateRandomKey(int keyLenght);
+        static std::string generateRandomKey(int keyLength);
 };
 
 #endif // ENCRYPTER_H

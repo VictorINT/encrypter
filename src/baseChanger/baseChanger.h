@@ -3,23 +3,20 @@
 
 #include <vector>
 #include <string>
-#include <stdio.h>
+#include <cstdio>
 #include <sstream>
-#include <string>
 #include <bitset>
 #include <stdexcept>
 
-using namespace std;
-
 //converters to
-string toDeca(const string& s);
-string toHex(const string& s);
-string toBinary(const string& s);
-string toCaesar(const string& s, short key);
+std::string toDeca(const std::string& s);
+std::string toHex(const std::string& s);
+std::string toBinary(const std::string& s);
+std::string toCaesar(const std::string& s, short key);
 
 //converters from
-string fromHex(string s);
-string fromBinary(const string& s);
-string fromDeca(string s);
+std::string fromHex(std::string s);
+std::string fromBinary(const std::string& s);
+std::string fromDeca(std::string s);
 
 #endif
