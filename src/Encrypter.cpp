@@ -1,6 +1,8 @@
 #include "Encrypter.h"
 
 #include <utility>
+#include <stdexcept>
+#include <algorithm>
 
 using namespace std;
 

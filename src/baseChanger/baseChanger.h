@@ -9,10 +9,9 @@
 #include <stdexcept>
 
 //converters to
-std::string toHex(const std::string& s);
-std::string toCaesar(const std::string& s, short key);
+__attribute__((visibility("default"))) std::string toHex(const std::string& s);
 
 //converters from
-std::string fromHex(std::string s);
+__attribute__((visibility("default"))) std::string fromHex(std::string s);
 
 #endif

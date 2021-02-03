@@ -2,8 +2,6 @@
 #define ENCRYPTER_H
 
 #include<cstring>
-#include "baseChanger/baseChanger.h"
-#include "textTransform/text_transform.h"
 
 class Encrypter {
 private:
@@ -36,8 +34,8 @@ private:
 public:
     explicit Encrypter(int keyLen = 256);
 
-    unsigned char *encrypt(unsigned char in[], unsigned int inLen, unsigned  char key[]);
-    unsigned char *decrypt(unsigned char in[], unsigned int inLen, unsigned  char key[]);
+    __attribute__((visibility("default"))) unsigned char *encrypt(unsigned char in[], unsigned int inLen, unsigned  char key[]);
+    __attribute__((visibility("default"))) unsigned char *decrypt(unsigned char in[], unsigned int inLen, unsigned  char key[]);
 
 };
 
