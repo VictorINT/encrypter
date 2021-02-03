@@ -35,7 +35,7 @@ string toCaesar(const string& s, short key){
 
 string fromHex(string s){
     const auto len = s.length();
-    if (len & 1) throw std::invalid_argument("odd length");
+    if (len & 1) throw std::invalid_argument("This might not be hexadecimal or it is partial");
     string output;
     output.reserve(len / 2);
     for (auto it = s.begin(); it != s.end(); ){
