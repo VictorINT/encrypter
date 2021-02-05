@@ -1,23 +1,19 @@
 # Encrypter
 This needs a new name.
 
-This is an encryption algorithm. In **building**. This is not secure or ready for public use.
+This is an encryption algorithm. In **building/experimenting**.
 
-To use it create a new instance of the class Encrypter, after importing "Encrypter.h"(this will be compiled as a library later, after version 1.0-beta).
+To use it create a new instance of the class Encrypter, after importing "Encrypter.h".
 
 `class Encrypter`
 
 ## Methods
 
-|     Type    |                    Method                    |                    Documentation                   |    Status    |
-|:-----------:|:--------------------------------------------:|:--------------------------------------------------:|:------------:|
-|  Encrypter  | Encrypter(`string key = "default"`)          | Returns a new instance of Encrypter                | done         |
-|    string   | encrypt(`string s`)                          | Returns the encrypted `s`                          | done         |
-|    string   | decrypt(`string s`)                          | Returns the decrypted `s`                          | not finished |
-| static void | generateKeyFile(string filename = "key.txt") | Generates a key in the running directory           | done         |
-|     void    | loadKeyFromFile(string filename = "key.txt") | Loads the key from a file in the running directory | done         |
-|    string   | getKey()                                     | Returns the key                                    | done         |
-|     void    | setKey()                                     | Sets the key                                       | done         |
+| Type | Method | Documentation |
+|-|-|-|
+| Encrypter | Encrypter(int keyLen = 256) | Returns a new instance of Encrypter |
+| unsigned char* | encrypt(`unsigned char inp[], unsigned int inLen, unsigned  char key[]`) | Returns the encrypted `in` using the `key` |
+| unsigned char*  | decrypt(`unsigned char in[], unsigned int inLen, unsigned  char key[]`) | Returns the decrypted `in` using the `key` |
 
 If the key is less than 5 characters long it will filled with random letters and signs
 
