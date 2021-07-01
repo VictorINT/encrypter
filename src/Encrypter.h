@@ -1,7 +1,15 @@
-#ifndef ENCRYPTER_H
-#define ENCRYPTER_H
+#ifndef ENC_H
+#define ENC_H
 
-#include<cstring>
+#include <cstring>
+#include <utility>
+#include <stdexcept>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <cstdio>
+#include <sstream>
+#include <bitset>
 
 class Encrypter {
 private:
@@ -36,7 +44,6 @@ public:
 
     __attribute__((visibility("default"))) unsigned char *encrypt(unsigned char in[], unsigned int inLen, unsigned  char key[]);
     __attribute__((visibility("default"))) unsigned char *decrypt(unsigned char in[], unsigned int inLen, unsigned  char key[]);
-
 };
 
 const unsigned char sbox[16][16] = {
@@ -108,4 +115,7 @@ const unsigned char inv_sbox[16][16] = {
         0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26,
         0xe1, 0x69, 0x14, 0x63, 0x55, 0x21, 0x0c, 0x7d, };
 
-#endif // ENCRYPTER_H
+    __attribute__((visibility("default"))) std::string toHex(const std::string& s);
+    __attribute__((visibility("default"))) std::string fromHex(std::string s);
+
+#endif
